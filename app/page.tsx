@@ -1,51 +1,65 @@
-import Image from 'next/image'
+"use state" ;
+import Image from 'next/image';
 import { ThemeModeToggle } from './(chatting)/_components/themeModeToggle';
 import Footer from './(chatting)/_components/footer';
 
 export default function Home() {
-    return (
-        <section className="bg-white min-h-screen h-full dark:bg-gray-900">
+  return (
+    <section className="bg-white min-h-screen h-full dark:bg-gray-900">
+      <div className="flex justify-between p-8">
+        {/* logo */}
+        <img className="h-20 w-40 rounded-full" src="/logo.png" alt="logo" />
+        <ThemeModeToggle />
+      </div>
 
-            <div className='flex justify-between p-8'>
-                {/* logo */}
-                <img
-                    className='h-12 w-24 rounded-full'
-                    src='/logo.png'
-                    alt='logo'
-                    content='cover'
-                />
+      <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
+        <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-7xl dark:text-white">
+          The future of <strong className="font-extrabold text-pink-600">mining</strong> <br />
+          compliance is here. <strong className="leading-1 mt-1 text-4.5xl text-purple-600 underline underline-purple-600 ">Talk to us. </strong>.
+        </h1>
+        <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
+          MiningNiti chatbot available 24/7 for stakeholders and customers which can answer all their queries regarding the rules, acts, and circulars.
+        </p>
 
-                <ThemeModeToggle />
-            </div>
+        {/* Add the Image component here */}
+        <div className="flex mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+          <Image
+            className="w-1/2 h-auto" // Adjust the width as needed
+            src="/Untitled-removebg-preview.png" // Replace with the actual path to your image file
+            alt="Your Image"
+            width={100} // Adjust the width based on your image dimensions
+            height={850} // Adjust the height based on your image dimensions
+          />
 
-            <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
-                <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-7xl dark:text-white">The  future of <strong className='font-extrabold text-pink-600'>mining  </strong> <br />compliance is here. <strong className='leading-1 mt-1 text-4.5xl text-purple-600 underline underline-purple-600 '>Talk to us.  </strong>. </h1>
-                <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400"> MiningNiti chatbot available 24/7 for stakeholders and customers which can answer all their queries regarding the rules, acts, and circulars.</p>
-                <div className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
-                    <a href="/chatting" className="inline-flex justify-center items-center py-3 px-5 text-base border border-pink-500 font-medium text-center rounded-lg text-pink-500 hover:text-white hover:bg-pink-500 bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
-                        Start Chatting
-                        <svg className="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                    </a>
-                </div>
+          {/* Start Chatting Button */}
+          <a href="/chatting" className="inline-flex justify-center items-center py-3 px-5 text-base border border-pink-500 font-medium text-center rounded-lg text-pink-500 hover:text-white hover:bg-pink-500 bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+            Start Chatting
+            <svg className="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
+            </svg>
+          </a>
+        </div>
 
-                {/* About */}
-                <ProjectAbout />
-                
-                {/* Vision */}
-                <ApproachOur />
+        {/* Rest of the components */}
+        {/* About */}
+        <ProjectAbout />
 
-                {/* Technologies Used */}
-                <Technologies />
+        {/* Vision */}
+        <ApproachOur />
 
-                {/* Team Details */}
-                <TeamDetails />
+        {/* Technologies Used */}
+        <Technologies />
 
-                {/* Footer */}
-                <Footer />
-            </div>
-        </section>
-    )
+        {/* Team Details */}
+        <TeamDetails />
+
+        {/* Footer */}
+        <Footer />
+      </div>
+    </section>
+  );
 }
+
 
 function StatCard({ name, image }: any) {
     return (

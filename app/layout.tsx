@@ -1,9 +1,9 @@
+const { Command } = require('commander');
 import type { Metadata } from 'next'
-import { ClerkProvider } from '@clerk/nextjs'
+
 import { Poppins } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from './(chatting)/_components/theme-provider'
-
 
 const poppins = Poppins({ weight: ["400", "500", "600", "700"], subsets: ["latin"] })
 
@@ -18,7 +18,6 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <ClerkProvider>
     <html lang="en">
       <body className={poppins.className}>
         <ThemeProvider
@@ -31,6 +30,6 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-    </ClerkProvider>
   )
 }
+
